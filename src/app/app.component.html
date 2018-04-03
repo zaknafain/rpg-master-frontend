@@ -1,1 +1,14 @@
-<div>Hello World</div>
+<ng-container>
+  <mat-toolbar class="toolbar-header">RPGMaster</mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened="true" disableClose="false" fixedInViewport="false">
+      Menu
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="main-area">Hello World</div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <mat-toolbar class="toolbar-footer">Footer</mat-toolbar>
+</ng-container>
