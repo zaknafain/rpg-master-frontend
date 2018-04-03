@@ -9,14 +9,20 @@ mat-toolbar {
 /* >>> Header <<< */
 
 .toolbar-header {
-  background-color: mat-color($rpg-master-primary, 300);
+  background-color: rpg-master-primary-color();
   top: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
 }
 
 /* >>> Footer <<< */
 
 .toolbar-footer {
-  background-color: mat-color($rpg-master-primary, 300);
+  background-color: rpg-master-primary-color();
   bottom: 0;
 }
 
@@ -34,9 +40,13 @@ mat-sidenav {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 300px;
+}
+
+mat-sidenav-content {
+  background-color: white;
 }
 
 .main-area {
-  margin-left: 20px;
+  margin: 20px;
 }
