@@ -1,3 +1,5 @@
+@import "../assets/stylesheets/material-theme.scss";
+
 mat-toolbar {
   position: fixed;
   left: 0;
@@ -7,12 +9,14 @@ mat-toolbar {
 /* >>> Header <<< */
 
 .toolbar-header {
+  background-color: mat-color($rpg-master-primary, 300);
   top: 0;
 }
 
 /* >>> Footer <<< */
 
 .toolbar-footer {
+  background-color: mat-color($rpg-master-primary, 300);
   bottom: 0;
 }
 
