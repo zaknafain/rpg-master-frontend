@@ -9,7 +9,10 @@
       Menu
     </mat-sidenav>
     <mat-sidenav-content>
-      <div class="main-area">Hello World</div>
+      <div *ngIf="current_user; else notSignedIn" class="main-area">Hello World</div>
+      <ng-template #notSignedIn>
+        <sign-in ></sign-in>
+      </ng-template>
     </mat-sidenav-content>
   </mat-sidenav-container>
 
