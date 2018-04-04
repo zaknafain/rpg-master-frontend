@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Account } from './models/account';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  current_user: boolean;
+  currentUser: Account;
 
+  assignCurrentUser(user: Account) {
+    this.currentUser = user;
+  }
 }

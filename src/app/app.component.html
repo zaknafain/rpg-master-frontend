@@ -1,7 +1,7 @@
 <ng-container>
   <mat-toolbar class="toolbar-header">
     <span>RPGMaster</span>
-    <mat-icon>language</mat-icon>
+    <span *ngIf="currentUser">{{currentUser.name}}</span>
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container">
@@ -9,9 +9,9 @@
       Menu
     </mat-sidenav>
     <mat-sidenav-content>
-      <div *ngIf="current_user; else notSignedIn" class="main-area">Hello World</div>
+      <div *ngIf="currentUser; else notSignedIn">Hello World</div>
       <ng-template #notSignedIn>
-        <sign-in ></sign-in>
+        <sign-in signIn="currentUser" (signedIn)="assignCurrentUser($event)"></sign-in>
       </ng-template>
     </mat-sidenav-content>
   </mat-sidenav-container>
