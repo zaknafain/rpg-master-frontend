@@ -1,19 +1,19 @@
 <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
   <mat-form-field>
-    <input matInput placeholder="Email" formControlName="email">
+    <input matInput required placeholder="Email" formControlName="email">
     <mat-error *ngIf="false">
       Please enter a valid email address
     </mat-error>
-    <mat-error *ngIf="false">
+    <mat-error *ngIf="signInForm.controls.email.invalid && signInForm.controls.email.errors.required === true">
       Email is <strong>required</strong>
     </mat-error>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Password" formControlName="password">
-    <mat-error *ngIf="false">
+    <input matInput required placeholder="Password" formControlName="password">
+    <mat-error *ngIf="signInForm.controls.password.invalid && signInForm.controls.password.errors.required === true">
       Password is <strong>required</strong>
     </mat-error>
   </mat-form-field>
-  <button type="submit" mat-raised-button [disabled]="signInForm.pristine" color="primary">Sign in</button>
+  <button type="submit" mat-raised-button [disabled]="signInForm.pristine || signInForm.invalid" color="primary">Sign in</button>
 </form>
