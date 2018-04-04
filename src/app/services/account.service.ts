@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { Account } from '../models/account';
 
@@ -6,12 +7,12 @@ export class AccountService {
 
   constructor() { }
 
-  signIn(account: Account): Account {
+  signIn(account: Account): Observable<Account> {
     account = new Account;
     account.email = "positive@reaction"
     account.name = "David"
     account.token = "qiwhdkueboqweileo"
 
-    return account;
+    return Observable.of(account);
   }
 }

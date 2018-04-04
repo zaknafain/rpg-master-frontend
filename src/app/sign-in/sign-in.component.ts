@@ -29,8 +29,10 @@ export class SignInComponent {
   }
 
   onSubmit() {
-    this.signIn = this.accountService.signIn(this.signIn);
-    this.signedIn.emit(this.signIn);
-    this.signInForm.reset();
+    this.accountService.signIn(this.signIn).subscribe(account => {
+      this.signIn = account;
+      this.signedIn.emit(this.signIn);
+      this.signInForm.reset();
+    });
   }
 }
