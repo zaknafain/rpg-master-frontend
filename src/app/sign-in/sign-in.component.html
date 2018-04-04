@@ -1,13 +1,19 @@
-<div>
-  <label>E-Mail:
-    <input [(ngModel)]="signIn.email" placeholder="E-Mail">
-  </label>
-</div>
-<div>
-  <label>Password:
-    <input [(ngModel)]="signIn.password" placeholder="Password">
-  </label>
-</div>
-<div>
-  <button type="button" (click)="onSubmit()">Sign in</button>
-</div>
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="Email" formControlName="email">
+    <mat-error *ngIf="false">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="false">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Password" formControlName="password">
+    <mat-error *ngIf="false">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <button type="submit" mat-raised-button [disabled]="signInForm.pristine" color="primary">Sign in</button>
+</form>

@@ -6,7 +6,11 @@
 
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="side" opened="true" disableClose="false" fixedInViewport="false">
-      Menu
+      <mat-nav-list *ngIf="currentUser">
+        <a mat-list-item href="...">Public Campaigns</a>
+        <a mat-list-item href="...">Private Campaigns</a>
+        <a mat-list-item href="...">Favorites</a>
+     </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
       <div *ngIf="currentUser; else notSignedIn">Hello World</div>
