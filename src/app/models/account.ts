@@ -1,5 +1,9 @@
 export class Account {
-  token: string;
+  id?: number;
   name: string;
-  email: string;
+  email?: string;
+  admin: boolean;
+  locale?: string;
+  createdAt: string;
+  updatedAt: string;
 }

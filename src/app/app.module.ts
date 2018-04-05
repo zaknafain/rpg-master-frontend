@@ -1,10 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from './material.module';
 
-import { AccountService } from './services/account.service'
+import { httpInterceptorProviders } from './http-interceptors/index';
+
+import { AuthService } from './services/auth.service';
+import { ErrorHandlingService } from './services/error-handling.service';
+import { MessageService } from './services/message.service';
+import { UserService } from './services/user.service';
 
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -18,9 +24,16 @@ import { SignInComponent } from './sign-in/sign-in.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
-  providers: [AccountService],
+  providers: [
+    httpInterceptorProviders,
+    AuthService,
+    ErrorHandlingService,
+    MessageService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

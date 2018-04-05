@@ -1,8 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
-import { Account } from '../models/account';
-import { AccountService } from '../services/account.service'
+import { AuthService } from '../services/auth.service'
 
 @Component({
   selector: 'sign-in',
@@ -10,12 +9,11 @@ import { AccountService } from '../services/account.service'
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent {
-  @Input() signIn: Account;
-  @Output() signedIn = new EventEmitter<Account>();
+  @Output() signedIn = new EventEmitter<string>();
   signInForm: FormGroup;
 
   constructor(
-    public accountService: AccountService,
+    public authService: AuthService,
     private formBuilder: FormBuilder
   ) {
     this.createForm();
@@ -29,9 +27,11 @@ export class SignInComponent {
   }
 
   onSubmit() {
-    this.accountService.signIn(this.signIn).subscribe(account => {
-      this.signIn = account;
-      this.signedIn.emit(this.signIn);
+    this.authService.signIn(
+      this.signInForm.controls.email.value,
+      this.signInForm.controls.password.value
+    ).subscribe(jwtToken => {
+      this.signedIn.emit(jwtToken);
       this.signInForm.reset();
     });
   }

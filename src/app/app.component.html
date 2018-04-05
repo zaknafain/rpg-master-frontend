@@ -13,12 +13,22 @@
      </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <div *ngIf="currentUser; else notSignedIn">Hello World</div>
+      <div *ngIf="jwtToken; else notSignedIn">Hello World</div>
       <ng-template #notSignedIn>
-        <sign-in signIn="currentUser" (signedIn)="assignCurrentUser($event)"></sign-in>
+        <sign-in (signedIn)="assignCurrentUser($event)"></sign-in>
       </ng-template>
     </mat-sidenav-content>
   </mat-sidenav-container>
 
-  <mat-toolbar class="toolbar-footer">Footer</mat-toolbar>
+  <mat-toolbar class="toolbar-footer">
+    <button *ngIf="messageService.messages.length > 0" mat-icon-button [matMenuTriggerFor]="menu">
+      Development log
+    </button>
+    <mat-menu #menu="matMenu">
+      <mat-list>
+        <mat-list-item *ngFor='let message of messageService.messages'> {{message}} </mat-list-item>
+      </mat-list>
+    </mat-menu>
+
+  </mat-toolbar>
 </ng-container>
