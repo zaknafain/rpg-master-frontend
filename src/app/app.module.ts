@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 import { MaterialModule } from './material.module';
 
@@ -30,6 +31,7 @@ import { LogDialog } from './log-dialog/log-dialog.component';
     HttpClientModule
   ],
   providers: [
+    MediaMatcher,
     httpInterceptorProviders,
     AuthService,
     ErrorHandlingService,

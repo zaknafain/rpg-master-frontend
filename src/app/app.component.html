@@ -1,11 +1,13 @@
 <ng-container>
-  <mat-toolbar class="toolbar-header">
+  <mat-toolbar color="primary" class="toolbar-header" role="header">
+    <button mat-icon-button *ngIf="mobileQuery.matches" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
     <span>RPGMaster</span>
     <span *ngIf="currentUser">{{currentUser.name}}</span>
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" opened="true" disableClose="false" fixedInViewport="false">
+    <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [opened]="!mobileQuery.matches" [disableClose]="!mobileQuery.matches" fixedInViewport="false">
       <mat-nav-list *ngIf="currentUser">
         <a mat-list-item href="...">Public Campaigns</a>
         <a mat-list-item href="...">Private Campaigns</a>
@@ -20,8 +22,8 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 
-  <mat-toolbar class="toolbar-footer">
-    <button mat-icon-button [disabled]="messageService.messages.length == 0" (click)="openLogDialog()">
+  <mat-toolbar color="primary" class="toolbar-footer">
+    <button mat-button [disabled]="messageService.messages.length == 0" (click)="openLogDialog()">
       Development log
     </button>
   </mat-toolbar>

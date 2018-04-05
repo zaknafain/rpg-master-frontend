@@ -9,7 +9,6 @@ mat-toolbar {
 /* >>> Header <<< */
 
 .toolbar-header {
-  background-color: rpg-master-primary-color();
   top: 0;
   display: flex;
   flex-direction: row;
@@ -22,7 +21,6 @@ mat-toolbar {
 /* >>> Footer <<< */
 
 .toolbar-footer {
-  background-color: rpg-master-primary-color();
   bottom: 0;
   display: flex;
   flex-direction: column;
