@@ -5,7 +5,8 @@
     <span *ngIf="currentUser">{{currentUser.name}}</span>
   </mat-toolbar>
 
-  <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-container class="sidenav-container" [style.top]="mobileQuery.matches ? '56px' : '60px'"
+                         [style.bottom]="mobileQuery.matches ? '56px' : '60px'">
     <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [opened]="!mobileQuery.matches" [disableClose]="!mobileQuery.matches"
                  fixedInViewport="false">
