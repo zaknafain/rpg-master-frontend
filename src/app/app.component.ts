@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
-import { Account } from './models/account';
+import { User } from './models/user';
 
 import { AuthService } from './services/auth.service';
 import { MessageService } from './services/message.service';
 import { UserService } from './services/user.service';
+
+import { LogDialog } from './log-dialog/log-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +15,14 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  currentUser: Account;
+  currentUser: User;
   jwtToken: string;
 
   constructor(
     private authService: AuthService,
     private userService: UserService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    public logDialog: MatDialog
   ) {
     this.assignCurrentUser(this.authService.jwtToken);
   }
@@ -33,6 +37,13 @@ export class AppComponent {
   loadCurrentUser() {
     this.userService.loadCurrentUser().subscribe(user => {
       this.currentUser = user;
+    });
+  }
+
+  openLogDialog(): void {
+    this.logDialog.open(LogDialog, {
+      width: '700px',
+      data: { messages: this.messageService.messages }
     });
   }
 }

@@ -14,10 +14,12 @@ import { UserService } from './services/user.service';
 
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { LogDialog } from './log-dialog/log-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LogDialog,
     SignInComponent
   ],
   imports: [
@@ -34,6 +36,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
     MessageService,
     UserService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LogDialog]
 })
 export class AppModule { }

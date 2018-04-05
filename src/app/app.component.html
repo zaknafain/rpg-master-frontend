@@ -21,14 +21,8 @@
   </mat-sidenav-container>
 
   <mat-toolbar class="toolbar-footer">
-    <button *ngIf="messageService.messages.length > 0" mat-icon-button [matMenuTriggerFor]="menu">
+    <button mat-icon-button [disabled]="messageService.messages.length == 0" (click)="openLogDialog()">
       Development log
     </button>
-    <mat-menu #menu="matMenu">
-      <mat-list>
-        <mat-list-item *ngFor='let message of messageService.messages'> {{message}} </mat-list-item>
-      </mat-list>
-    </mat-menu>
-
   </mat-toolbar>
 </ng-container>

@@ -24,6 +24,12 @@ mat-toolbar {
 .toolbar-footer {
   background-color: rpg-master-primary-color();
   bottom: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
 }
 
 /* >>> Sidenav <<< */
