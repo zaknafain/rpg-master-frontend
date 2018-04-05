@@ -2,11 +2,11 @@
   <mat-toolbar color="primary" class="toolbar-header" role="header">
     <button mat-icon-button *ngIf="mobileQuery.matches" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
     <span>RPGMaster</span>
-    <span *ngIf="currentUser">{{currentUser.name}}</span>
+    <button mat-button *ngIf="currentUser">{{currentUser.name}}</button>
   </mat-toolbar>
 
-  <mat-sidenav-container class="sidenav-container" [style.top]="mobileQuery.matches ? '56px' : '60px'"
-                         [style.bottom]="mobileQuery.matches ? '56px' : '60px'">
+  <mat-sidenav-container class="sidenav-container" [style.top]="mobileQuery.matches ? '56px' : '64px'"
+                         [style.bottom]="mobileQuery.matches ? '56px' : '64px'">
     <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [opened]="!mobileQuery.matches" [disableClose]="!mobileQuery.matches"
                  fixedInViewport="false">
