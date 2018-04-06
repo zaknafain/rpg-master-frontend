@@ -21,10 +21,9 @@ const routes: Routes = [
     canLoad: [AuthGuard]
   },
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  }
+    path: '**',
+    redirectTo: '/home'
+  },
 ];
 
 @NgModule({
