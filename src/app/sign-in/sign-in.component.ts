@@ -1,5 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../services/auth.service'
 
@@ -8,15 +9,18 @@ import { AuthService } from '../services/auth.service'
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
-export class SignInComponent {
+export class SignInComponent implements OnInit {
   @Output() signedIn = new EventEmitter<string>();
   signInForm: FormGroup;
   showForm: boolean;
 
   constructor(
     public authService: AuthService,
-    private formBuilder: FormBuilder
-  ) {
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
     this.showForm = !this.authService.isLoggedIn();
     if (this.showForm) {
       this.createForm();
@@ -36,7 +40,10 @@ export class SignInComponent {
       this.signInForm.controls.password.value
     ).subscribe(jwtToken => {
       this.signedIn.emit(jwtToken);
-      this.signInForm.reset();
+      this.showForm = !this.authService.isLoggedIn();
+      if (!this.showForm) {
+        this.router.navigate([this.authService.redirectUrl]);
+      }
     });
   }
 }
