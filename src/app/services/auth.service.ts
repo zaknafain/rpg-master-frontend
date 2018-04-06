@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable, Subject } from 'rxjs/Rx';
 import { catchError, map } from 'rxjs/operators';
 
 import { BaseService } from './base.service';
@@ -10,17 +10,19 @@ class JwtToken {
 
 @Injectable()
 export class AuthService extends BaseService implements OnInit {
+  private _changed = new Subject();
   jwtToken: string = localStorage.getItem("jwt");
-  redirectUrl: string;
+  redirectUrl: string = '';
+  changed = this._changed.asObservable();
 
   ngOnInit() {
-    this.jwtToken = localStorage.getItem("jwt");
+    this.updateToken(localStorage.getItem("jwt"));
   }
 
   signIn(email: string, password: string): Observable<string> {
     return this.http.post('user_token', { auth: { email: email, password: password } }).pipe(
       map((jwtToken: JwtToken) => {
-        this.saveToken(jwtToken.jwt);
+        this.updateToken(jwtToken.jwt);
 
         return jwtToken.jwt;
       }),
@@ -32,8 +34,19 @@ export class AuthService extends BaseService implements OnInit {
     return !!this.jwtToken;
   }
 
-  private saveToken(token: string) {
+  signOut(): void {
+    this.updateToken('');
+  }
+
+  private updateToken(token: string) {
     this.jwtToken = token;
-    localStorage.setItem("jwt", token);
+    if (!!token) {
+      localStorage.setItem("jwt", token);
+    } else {
+      this.redirectUrl = '';
+      localStorage.clear();
+    }
+
+    this._changed.next(this.jwtToken);
   }
 }

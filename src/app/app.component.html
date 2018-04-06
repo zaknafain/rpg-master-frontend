@@ -4,6 +4,7 @@
     <span routerLink="/">RPGMaster</span>
     <button mat-button *ngIf="currentUser" routerLink="/profile">{{currentUser.name}}</button>
     <button mat-button *ngIf="!currentUser" routerLink="/sign_in">Sign in</button>
+    <button mat-icon-button *ngIf="currentUser" (click)="signOut()"><mat-icon>power_settings_new</mat-icon></button>
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container" [style.top]="mobileQuery.matches ? '56px' : '64px'"

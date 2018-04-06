@@ -34,12 +34,17 @@ export class AppComponent {
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
     this.assignCurrentUser(this.authService.jwtToken);
+    this.authService.changed.subscribe((token: string) => {
+      this.assignCurrentUser(token);
+    });
   }
 
   assignCurrentUser(token: string) {
     this.jwtToken = token;
     if (this.jwtToken) {
       this.loadCurrentUser();
+    } else {
+      this.currentUser = undefined;
     }
   }
 
@@ -54,5 +59,9 @@ export class AppComponent {
       width: '700px',
       data: { messages: this.messageService.messages }
     });
+  }
+
+  signOut(): void {
+    this.authService.signOut();
   }
 }
