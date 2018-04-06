@@ -3,7 +3,7 @@
 </ng-container>
 <form *ngIf="showForm" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
   <mat-form-field>
-    <input matInput required placeholder="Email" formControlName="email">
+    <input matInput required type="email" placeholder="Email" formControlName="email">
     <mat-error *ngIf="false">
       Please enter a valid email address
     </mat-error>
@@ -13,7 +13,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput required placeholder="Password" formControlName="password">
+    <input matInput required type="password" placeholder="Password" formControlName="password">
     <mat-error *ngIf="signInForm.controls.password.invalid && signInForm.controls.password.errors.required === true">
       Password is <strong>required</strong>
     </mat-error>
