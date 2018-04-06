@@ -11,12 +11,16 @@ import { AuthService } from '../services/auth.service'
 export class SignInComponent {
   @Output() signedIn = new EventEmitter<string>();
   signInForm: FormGroup;
+  showForm: boolean;
 
   constructor(
     public authService: AuthService,
     private formBuilder: FormBuilder
   ) {
-    this.createForm();
+    this.showForm = !this.authService.isLoggedIn();
+    if (this.showForm) {
+      this.createForm();
+    }
   }
 
   createForm() {

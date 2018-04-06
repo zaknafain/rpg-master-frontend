@@ -1,4 +1,7 @@
-<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+<ng-container *ngIf="!showForm">
+  <div>You are alreay logged in.</div>
+</ng-container>
+<form *ngIf="showForm" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
   <mat-form-field>
     <input matInput required placeholder="Email" formControlName="email">
     <mat-error *ngIf="false">

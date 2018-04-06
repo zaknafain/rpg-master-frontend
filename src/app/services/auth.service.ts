@@ -11,6 +11,7 @@ class JwtToken {
 @Injectable()
 export class AuthService extends BaseService implements OnInit {
   jwtToken: string = localStorage.getItem("jwt");
+  redirectUrl: string;
 
   ngOnInit() {
     this.jwtToken = localStorage.getItem("jwt");
@@ -25,6 +26,10 @@ export class AuthService extends BaseService implements OnInit {
       }),
       catchError(this.handleResponseError('AuthService', 'user_token', undefined))
     );
+  }
+
+  isLoggedIn(): boolean {
+    return !!this.jwtToken;
   }
 
   private saveToken(token: string) {

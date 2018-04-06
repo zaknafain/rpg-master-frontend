@@ -1,8 +1,9 @@
 <ng-container>
   <mat-toolbar color="primary" class="toolbar-header" role="header">
     <button mat-icon-button *ngIf="mobileQuery.matches" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-    <span>RPGMaster</span>
-    <button mat-button *ngIf="currentUser">{{currentUser.name}}</button>
+    <span routerLink="/">RPGMaster</span>
+    <button mat-button *ngIf="currentUser" routerLink="/profile">{{currentUser.name}}</button>
+    <button mat-button *ngIf="!currentUser" routerLink="/sign_in">Sign in</button>
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container" [style.top]="mobileQuery.matches ? '56px' : '64px'"
@@ -17,10 +18,7 @@
      </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <div *ngIf="jwtToken; else notSignedIn">Hello World</div>
-      <ng-template #notSignedIn>
-        <sign-in (signedIn)="assignCurrentUser($event)"></sign-in>
-      </ng-template>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 

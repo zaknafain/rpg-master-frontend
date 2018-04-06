@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { MediaMatcher } from '@angular/cdk/layout';
 
+import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 
 import { httpInterceptorProviders } from './http-interceptors/index';
@@ -14,12 +16,14 @@ import { MessageService } from './services/message.service';
 import { UserService } from './services/user.service';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { LogDialog } from './log-dialog/log-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     LogDialog,
     SignInComponent
   ],
@@ -27,6 +31,7 @@ import { LogDialog } from './log-dialog/log-dialog.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
     MaterialModule,
     HttpClientModule
   ],
@@ -41,4 +46,9 @@ import { LogDialog } from './log-dialog/log-dialog.component';
   bootstrap: [AppComponent],
   entryComponents: [LogDialog]
 })
-export class AppModule { }
+export class AppModule {
+  // Diagnostic only: inspect router configuration
+  constructor(router: Router) {
+    console.log('Routes: ', router.config);
+  }
+}
