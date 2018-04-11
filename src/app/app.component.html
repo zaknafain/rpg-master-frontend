@@ -1,12 +1,12 @@
 <ng-container>
   <mat-toolbar color="primary" class="toolbar-header" role="header">
-    <button mat-icon-button *ngIf="mobileQuery.matches" (click)="sidenav.toggle()" class="toolbar-growing">
+    <button mat-icon-button *ngIf="mobileQuery.matches" (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <span routerLink="/" class="toolbar-growing">RPGMaster</span>
+    <span routerLink="/" class="toolbar-brand" [ngClass]="{'mobile' : mobileQuery.matches}">RPGMaster</span>
     <button mat-button *ngIf="!currentUser" routerLink="/sign_in">Sign in</button>
     <ng-container *ngIf="currentUser">
-      <button mat-button [matMenuTriggerFor]="profileMenu">{{currentUser.name}}</button>
+      <button mat-icon-button [matMenuTriggerFor]="profileMenu"><mat-icon>more_horiz</mat-icon></button>
       <mat-menu #profileMenu="matMenu">
         <button mat-menu-item routerLink="/profile" routerLinkActive="active">
           <mat-icon>face</mat-icon>

@@ -17,8 +17,14 @@ mat-toolbar {
   align-content: stretch;
   align-items: center;
 
-  .toolbar-growing {
+  .toolbar-brand {
     flex: auto 1 1;
+    text-align: center;
+    margin-left: 40px;
+
+    &.mobile {
+      margin-left: 0;
+    }
   }
 }
 
