@@ -49,9 +49,14 @@ export class AppComponent {
   }
 
   loadCurrentUser() {
-    this.userService.loadCurrentUser().subscribe(user => {
-      this.currentUser = user;
-    });
+    this.userService.loadCurrentUser().subscribe(
+      user => {
+        this.currentUser = user;
+      },
+      error => {
+        this.authService.signOut();
+      }
+    );
   }
 
   openLogDialog(): void {

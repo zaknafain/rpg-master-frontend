@@ -21,10 +21,10 @@ export class AuthService extends BaseService implements OnInit {
 
   signIn(email: string, password: string): Observable<string> {
     return this.http.post('user_token', { auth: { email: email, password: password } }).pipe(
-      map((jwtToken: JwtToken) => {
-        this.updateToken(jwtToken.jwt);
+      map((token: JwtToken) => {
+        this.updateToken(token.jwt);
 
-        return jwtToken.jwt;
+        return token.jwt;
       }),
       catchError(this.handleResponseError('AuthService', 'user_token', undefined))
     );
