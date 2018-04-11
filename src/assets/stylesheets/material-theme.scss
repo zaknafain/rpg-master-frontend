@@ -26,3 +26,7 @@ $rpg-master-theme: mat-light-theme($rpg-master-primary, $rpg-master-accent, $rpg
 @function rpg-master-primary-color() {
   @return mat-color($rpg-master-primary, 300);
 }
+
+@function rpg-master-secondary-color() {
+  @return mat-color($rpg-master-accent, 200);
+}

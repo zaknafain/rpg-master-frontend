@@ -16,6 +16,10 @@ mat-toolbar {
   justify-content: space-between;
   align-content: stretch;
   align-items: center;
+
+  .toolbar-growing {
+    flex: auto 1 1;
+  }
 }
 
 /* >>> Footer <<< */
@@ -37,6 +41,13 @@ mat-sidenav-container {
   position: absolute;
   left: 0;
   right: 0;
+  top: 64px;
+  bottom: 64px;
+
+  &.mobile {
+    top: 56px;
+    bottom: 56px;
+  }
 }
 
 mat-sidenav {
@@ -53,4 +64,14 @@ mat-nav-list {
 mat-sidenav-content {
   background-color: white;
   padding: 20px 320px 20px 20px;
+
+  &.mobile {
+    padding-right: 20px;
+  }
+}
+
+/* >>> Various <<< */
+
+button.active {
+  background-color: rpg-master-secondary-color();
 }
