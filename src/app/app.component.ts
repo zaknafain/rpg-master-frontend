@@ -52,9 +52,7 @@ export class AppComponent {
     this.userService.loadCurrentUser().subscribe(
       user => {
         this.currentUser = user;
-      },
-      error => {
-        this.authService.signOut();
+        if (!user) { this.signOut() }
       }
     );
   }

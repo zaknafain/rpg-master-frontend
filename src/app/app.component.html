@@ -1,4 +1,4 @@
-<ng-container>
+<header>
   <mat-toolbar color="primary" class="toolbar-header" role="header">
     <button mat-icon-button *ngIf="mobileQuery.matches" (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
@@ -23,25 +23,29 @@
       </mat-menu>
     </ng-container>
   </mat-toolbar>
+</header>
 
+<main>
   <mat-sidenav-container class="sidenav-container" [ngClass]="{'mobile' : mobileQuery.matches}">
     <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [opened]="!mobileQuery.matches" [disableClose]="!mobileQuery.matches"
-                 fixedInViewport="false">
+                  [opened]="!mobileQuery.matches" [disableClose]="!mobileQuery.matches"
+                  fixedInViewport="false">
       <mat-nav-list *ngIf="currentUser">
         <a mat-list-item href="...">Public Campaigns</a>
         <a mat-list-item href="...">Private Campaigns</a>
         <a mat-list-item href="...">Favorites</a>
-     </mat-nav-list>
+      </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content [ngClass]="{'mobile' : mobileQuery.matches}">
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
+</main>
 
+<footer>
   <mat-toolbar color="primary" class="toolbar-footer">
     <button mat-button [disabled]="messageService.messages.length == 0" (click)="openLogDialog()">
       Development log
     </button>
   </mat-toolbar>
-</ng-container>
+</footer>
