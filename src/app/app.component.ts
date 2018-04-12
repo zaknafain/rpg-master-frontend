@@ -57,13 +57,6 @@ export class AppComponent {
     );
   }
 
-  openLogDialog(): void {
-    this.logDialog.open(LogDialog, {
-      width: '700px',
-      data: { messages: this.messageService.messages }
-    });
-  }
-
   signOut(): void {
     this.authService.signOut();
   }
