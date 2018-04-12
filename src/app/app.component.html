@@ -1,15 +1,15 @@
 <header>
   <mat-toolbar color="primary" class="toolbar-header" role="header">
-    <button mat-icon-button *ngIf="mobileQuery.matches" (click)="sidenav.toggle()">
+    <button mat-icon-button *ngIf="mobileQuery.matches && currentUser" (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <span routerLink="/" class="toolbar-brand" [ngClass]="{'mobile' : mobileQuery.matches}">RPGMaster</span>
-    <button mat-button *ngIf="!currentUser" routerLink="/sign_in">Sign in</button>
+    <span routerLink="/" class="toolbar-brand" [ngClass]="{'mobile-signed-id' : mobileQuery.matches && currentUser}">RPGMaster</span>
+    <button mat-icon-button *ngIf="!currentUser" routerLink="/sign_in"><mat-icon>exit_to_app</mat-icon></button>
     <ng-container *ngIf="currentUser">
       <button mat-icon-button [matMenuTriggerFor]="profileMenu"><mat-icon>more_horiz</mat-icon></button>
       <mat-menu #profileMenu="matMenu">
         <button mat-menu-item routerLink="/profile" routerLinkActive="active">
-          <mat-icon>face</mat-icon>
+          <mat-icon>account_circle</mat-icon>
           <span>Profile</span>
         </button>
         <button mat-menu-item disabled>
