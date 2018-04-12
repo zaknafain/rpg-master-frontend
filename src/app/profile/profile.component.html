@@ -1,3 +1,24 @@
-<p>
-  profile works!
-</p>
+<h1>Profile</h1>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput required type="text" placeholder="Username" formControlName="name">
+    <mat-error *ngIf="userForm.controls.name.invalid && userForm.controls.name.errors.required === true">
+      Username is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput required type="email" placeholder="Email" formControlName="email">
+    <mat-error *ngIf="false">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="userForm.controls.email.invalid && userForm.controls.email.errors.required === true">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button [disabled]="isLoading || userForm.pristine || userForm.invalid" color="primary">
+    <span *ngIf="!isLoading">Save</span>
+    <mat-progress-spinner diameter="21" *ngIf="isLoading" color="primary" mode="indeterminate"></mat-progress-spinner>
+  </button>
+</form>

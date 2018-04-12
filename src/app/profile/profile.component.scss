@@ -1,3 +1,12 @@
 :host {
   display: block;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button mat-progress-spinner {
+  margin: 8px auto;
+}

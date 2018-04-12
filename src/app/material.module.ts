@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,7 +12,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
-    NoopAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
@@ -25,7 +23,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatProgressSpinnerModule
   ],
   exports: [
-    NoopAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,

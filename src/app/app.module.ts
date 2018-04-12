@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MediaMatcher } from '@angular/cdk/layout';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +33,7 @@ import { LogDialog } from './log-dialog/log-dialog.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    NoopAnimationsModule,
     MaterialModule,
     HttpClientModule
   ],
