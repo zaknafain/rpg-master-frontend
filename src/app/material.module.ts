@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     NoopAnimationsModule,
@@ -31,7 +33,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule { }

@@ -12,6 +12,7 @@ import { AuthService } from '../services/auth.service'
 export class SignInComponent implements OnInit {
   @Output() signedIn = new EventEmitter<string>();
   signInForm: FormGroup;
+  isLoading: boolean = false;
   showForm: boolean;
 
   constructor(
@@ -35,6 +36,7 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() {
+    this.isLoading = true;
     this.authService.signIn(
       this.signInForm.controls.email.value,
       this.signInForm.controls.password.value
@@ -44,6 +46,7 @@ export class SignInComponent implements OnInit {
       if (!this.showForm) {
         this.router.navigate([this.authService.redirectUrl]);
       }
+      this.isLoading = false;
     });
   }
 }

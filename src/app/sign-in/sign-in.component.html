@@ -18,5 +18,8 @@
       Password is <strong>required</strong>
     </mat-error>
   </mat-form-field>
-  <button type="submit" mat-raised-button [disabled]="signInForm.pristine || signInForm.invalid" color="primary">Sign in</button>
+  <button type="submit" mat-raised-button [disabled]="isLoading || signInForm.pristine || signInForm.invalid" color="primary">
+    <span *ngIf="!isLoading">Sign in</span>
+    <mat-progress-spinner diameter="21" *ngIf="isLoading" color="primary" mode="indeterminate"></mat-progress-spinner>
+  </button>
 </form>
