@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { ProfileRoutingModule } from './profile-routing.module';
-import { MaterialModule } from '../material.module';
+import { SharedModule } from '../shared.module';
 
 import { AuthService } from '../services/auth.service';
 
@@ -14,7 +14,7 @@ import { ProfileComponent } from './profile.component';
     CommonModule,
     ReactiveFormsModule,
     ProfileRoutingModule,
-    MaterialModule
+    SharedModule
   ],
   declarations: [
     ProfileComponent

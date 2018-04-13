@@ -17,8 +17,5 @@
     </mat-error>
   </mat-form-field>
 
-  <button type="submit" mat-raised-button [disabled]="isLoading || userForm.pristine || userForm.invalid" color="primary">
-    <span *ngIf="!isLoading">Save</span>
-    <mat-progress-spinner diameter="21" *ngIf="isLoading" color="primary" mode="indeterminate"></mat-progress-spinner>
-  </button>
+  <loading-button [loading]="isLoading" [disabled]="userForm.pristine || userForm.invalid" text="Save"></loading-button>
 </form>

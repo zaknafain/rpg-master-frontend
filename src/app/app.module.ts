@@ -7,7 +7,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MediaMatcher } from '@angular/cdk/layout';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MaterialModule } from './material.module';
+import { SharedModule } from './shared.module';
 
 import { httpInterceptorProviders } from './http-interceptors/index';
 
@@ -19,13 +19,11 @@ import { UserService } from './services/user.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-import { LogDialog } from './log-dialog/log-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LogDialog,
     SignInComponent
   ],
   imports: [
@@ -34,7 +32,7 @@ import { LogDialog } from './log-dialog/log-dialog.component';
     ReactiveFormsModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    MaterialModule,
+    SharedModule,
     HttpClientModule
   ],
   providers: [
@@ -45,8 +43,7 @@ import { LogDialog } from './log-dialog/log-dialog.component';
     MessageService,
     UserService
   ],
-  bootstrap: [AppComponent],
-  entryComponents: [LogDialog]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   // Diagnostic only: inspect router configuration
