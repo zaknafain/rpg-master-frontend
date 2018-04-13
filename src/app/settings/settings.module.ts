@@ -2,23 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { ProfileRoutingModule } from './profile-routing.module';
+import { SettingsRoutingModule } from './settings-routing.module';
 import { SharedModule } from '../shared.module';
 
 import { AuthService } from '../services/auth.service';
 
-import { ProfileComponent } from './profile.component';
+import { SettingsComponent } from './settings.component';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ProfileRoutingModule,
+    SettingsRoutingModule,
     SharedModule
   ],
   declarations: [
-    ProfileComponent
+    SettingsComponent
   ],
   providers: [AuthService]
 })
-export class ProfileModule {}
+export class SettingsModule {}

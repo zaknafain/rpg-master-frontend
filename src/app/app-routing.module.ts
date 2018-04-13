@@ -16,8 +16,8 @@ const routes: Routes = [
     component: SignInComponent
   },
   {
-    path: 'profile',
-    loadChildren: './profile/profile.module#ProfileModule',
+    path: 'settings',
+    loadChildren: './settings/settings.module#SettingsModule',
     canLoad: [AuthGuard]
   },
   {

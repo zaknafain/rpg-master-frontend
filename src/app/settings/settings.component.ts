@@ -6,11 +6,11 @@ import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 
 @Component({
-  selector: 'profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  selector: 'settings',
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class SettingsComponent implements OnInit {
   currentUser: User;
   userForm: FormGroup;
   isLoading: boolean = false;

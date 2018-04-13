@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ProfileComponent } from './profile.component';
+import { SettingsComponent } from './settings.component';
 
 import { AuthGuard } from '../guards/auth.guard';
 
-const profileRoutes: Routes = [
+const settingsRoutes: Routes = [
   {
     path: '',
-    component: ProfileComponent,
+    component: SettingsComponent,
     canActivate: [AuthGuard]
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forChild(profileRoutes)
+    RouterModule.forChild(settingsRoutes)
   ],
   exports: [
     RouterModule
   ]
 })
-export class ProfileRoutingModule {}
+export class SettingsRoutingModule {}
