@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SettingsComponent } from './settings.component';
-
 import { AuthGuard } from '../guards/auth.guard';
+
+import { SettingsOverviewComponent } from './settings-overview.component';
+import { SettingsComponent } from './settings.component';
 
 const settingsRoutes: Routes = [
   {
     path: '',
-    component: SettingsComponent,
+    component: SettingsOverviewComponent,
     canActivate: [AuthGuard]
   }
 ];
