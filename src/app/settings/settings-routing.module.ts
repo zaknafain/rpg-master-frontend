@@ -3,14 +3,25 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from '../guards/auth.guard';
 
-import { SettingsOverviewComponent } from './settings-overview.component';
 import { SettingsComponent } from './settings.component';
+import { SettingsOverviewComponent } from './settings-overview.component';
+import { SettingsIdentityComponent } from './settings-identity.component';
 
 const settingsRoutes: Routes = [
   {
     path: '',
-    component: SettingsOverviewComponent,
-    canActivate: [AuthGuard]
+    component: SettingsComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: SettingsOverviewComponent
+      },
+      {
+        path: 'identity',
+        component: SettingsIdentityComponent
+      }
+    ]
   }
 ];
 

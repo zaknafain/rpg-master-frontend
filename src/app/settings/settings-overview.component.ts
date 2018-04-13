@@ -6,15 +6,12 @@ import { User } from '../models/user';
 
 @Component({
   selector: 'settings-overview',
-  templateUrl: './settings-overview.component.html',
-  styleUrls: ['./settings-overview.component.scss']
+  templateUrl: './settings-overview.component.html'
 })
 export class SettingsOverviewComponent {
   currentUser: User;
 
-  constructor(
-    private userService: UserService
-  ) {
+  constructor(private userService: UserService) {
     this.currentUser = this.userService.currentUser;
   }
 

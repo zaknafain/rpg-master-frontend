@@ -1,18 +1,20 @@
-<h1>Settings</h1>
-
 <mat-list>
   <h3 mat-subheader>Identity</h3>
   <mat-list-item>
     <mat-icon mat-list-icon>account_circle</mat-icon>
     <h4 mat-line>Username</h4>
     <p mat-line>{{ currentUser.name }}</p>
-    <mat-icon>edit</mat-icon>
+    <button mat-icon-button type="button" routerLink="identity">
+      <mat-icon>edit</mat-icon>
+    </button>
   </mat-list-item>
   <mat-list-item>
     <mat-icon mat-list-icon>email</mat-icon>
     <h4 mat-line>Email</h4>
     <p mat-line>{{ currentUser.email }}</p>
-    <mat-icon>edit</mat-icon>
+    <button mat-icon-button type="button" routerLink="identity">
+      <mat-icon>edit</mat-icon>
+    </button>
   </mat-list-item>
   <h3 mat-subheader>Security</h3>
   <mat-list-item>

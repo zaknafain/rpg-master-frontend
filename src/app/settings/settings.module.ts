@@ -7,8 +7,9 @@ import { SharedModule } from '../shared.module';
 
 import { AuthService } from '../services/auth.service';
 
-import { SettingsOverviewComponent } from './settings-overview.component';
 import { SettingsComponent } from './settings.component';
+import { SettingsOverviewComponent } from './settings-overview.component';
+import { SettingsIdentityComponent } from './settings-identity.component';
 
 @NgModule({
   imports: [
@@ -18,8 +19,9 @@ import { SettingsComponent } from './settings.component';
     SharedModule
   ],
   declarations: [
+    SettingsComponent,
     SettingsOverviewComponent,
-    SettingsComponent
+    SettingsIdentityComponent
   ],
   providers: [AuthService]
 })
