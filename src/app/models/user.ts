@@ -6,4 +6,6 @@ export class User {
   locale?: string;
   createdAt: string;
   updatedAt: string;
+  password?: string;
+  passwordConfirmation?: string;
 }

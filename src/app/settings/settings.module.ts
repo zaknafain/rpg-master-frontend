@@ -10,6 +10,7 @@ import { AuthService } from '../services/auth.service';
 import { SettingsComponent } from './settings.component';
 import { SettingsOverviewComponent } from './settings-overview.component';
 import { SettingsIdentityComponent } from './settings-identity.component';
+import { SettingsPasswordComponent } from './settings-password.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { SettingsIdentityComponent } from './settings-identity.component';
   declarations: [
     SettingsComponent,
     SettingsOverviewComponent,
-    SettingsIdentityComponent
+    SettingsIdentityComponent,
+    SettingsPasswordComponent
   ],
   providers: [AuthService]
 })

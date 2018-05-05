@@ -23,7 +23,7 @@ export class UserService extends BaseService {
   }
 
   updateUser(user: User): Observable<User> {
-    return this.http.put(`users/${user.id}`, user).pipe(
+    return this.http.put(`users/${user.id}`, { user: user }).pipe(
       map(() => {
         this.currentUser = user;
 

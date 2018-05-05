@@ -6,6 +6,7 @@ import { AuthGuard } from '../guards/auth.guard';
 import { SettingsComponent } from './settings.component';
 import { SettingsOverviewComponent } from './settings-overview.component';
 import { SettingsIdentityComponent } from './settings-identity.component';
+import { SettingsPasswordComponent } from './settings-password.component';
 
 const settingsRoutes: Routes = [
   {
@@ -20,6 +21,10 @@ const settingsRoutes: Routes = [
       {
         path: 'identity',
         component: SettingsIdentityComponent
+      },
+      {
+        path: 'password',
+        component: SettingsPasswordComponent
       }
     ]
   }
