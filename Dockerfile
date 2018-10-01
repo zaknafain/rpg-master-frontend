@@ -2,4 +2,4 @@ FROM node:10.7-alpine
 
 WORKDIR /rpg-master-frontend
 
-EXPOSE 8080
+EXPOSE 4200
