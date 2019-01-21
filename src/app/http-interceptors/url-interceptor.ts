@@ -7,7 +7,7 @@ export class UrlInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const finalReq = req.clone({
-      url: `http://127.0.0.1:5000/${req.url}`
+      url: `http://rpg-master.local/api/${req.url}`
     });
 
     return next.handle(finalReq);
