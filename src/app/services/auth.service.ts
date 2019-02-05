@@ -8,7 +8,9 @@ class JwtToken {
   jwt: string;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService extends BaseService implements OnInit {
   private _changed = new Subject();
   jwtToken: string = localStorage.getItem("jwt");

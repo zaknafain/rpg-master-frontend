@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Rx';
 
 import { ErrorHandlingService, HandleError } from './error-handling.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class BaseService {
   protected serviceName: string;
   protected handleError: HandleError;

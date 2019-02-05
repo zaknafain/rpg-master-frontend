@@ -7,7 +7,9 @@ import { BaseService } from './base.service';
 
 import { User } from '../models/user';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService extends BaseService {
   currentUser: User;
 
