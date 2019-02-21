@@ -1,6 +1,17 @@
+:host {
+  align-self: stretch;
+  flex: 1 1 auto;
+  display: flex;
+}
+
+#sign-in-container {
+  margin: auto;
+}
+
 form {
   display: flex;
   flex-direction: column;
+  width: 300px;
 }
 
 button mat-progress-spinner {

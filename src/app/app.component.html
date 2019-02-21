@@ -1,45 +1,32 @@
 <header>
-  <mat-toolbar color="primary" class="toolbar-header" role="header">
-    <button mat-icon-button *ngIf="mobileQuery.matches && currentUser" (click)="sidenav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span routerLink="/" class="toolbar-brand" [ngClass]="{'mobile-signed-id' : mobileQuery.matches && currentUser}">RPGMaster</span>
-    <button mat-icon-button *ngIf="!currentUser" routerLink="/sign_in"><mat-icon>exit_to_app</mat-icon></button>
-    <ng-container *ngIf="currentUser">
-      <button mat-icon-button [matMenuTriggerFor]="profileMenu"><mat-icon>more_horiz</mat-icon></button>
-      <mat-menu #profileMenu="matMenu">
-        <button mat-menu-item routerLink="/settings" routerLinkActive="active">
-          <mat-icon>settings</mat-icon>
-          <span>Settings</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon>language</mat-icon>
-          <span>Language</span>
-        </button>
-        <button mat-menu-item (click)="signOut()">
-          <mat-icon>power_settings_new</mat-icon>
-          <span>Log out</span>
-        </button>
-      </mat-menu>
-    </ng-container>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span routerLink="/" class="toolbar-brand" [ngClass]="{'mobile-signed-id' : mobileQuery.matches && currentUser}">RPGMaster</span>
+
+      <button mat-icon-button *ngIf="!currentUser" routerLink="/sign_in"><mat-icon>exit_to_app</mat-icon></button>
+      <ng-container *ngIf="currentUser">
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu"><mat-icon>more_horiz</mat-icon></button>
+        <mat-menu #profileMenu="matMenu">
+          <button mat-menu-item routerLink="/settings" routerLinkActive="active">
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>language</mat-icon>
+            <span>Language</span>
+          </button>
+          <button mat-menu-item (click)="signOut()">
+            <mat-icon>power_settings_new</mat-icon>
+            <span>Log out</span>
+          </button>
+        </mat-menu>
+      </ng-container>
+    </mat-toolbar-row>
   </mat-toolbar>
 </header>
 
 <main>
-  <mat-sidenav-container class="sidenav-container" [ngClass]="{'mobile' : mobileQuery.matches}">
-    <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                  [opened]="!mobileQuery.matches" [disableClose]="!mobileQuery.matches"
-                  fixedInViewport="false">
-      <mat-nav-list *ngIf="currentUser">
-        <a mat-list-item href="...">Public Campaigns</a>
-        <a mat-list-item href="...">Private Campaigns</a>
-        <a mat-list-item href="...">Favorites</a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content [ngClass]="{'mobile' : mobileQuery.matches}">
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  <router-outlet></router-outlet>
 </main>
 
 <footer>

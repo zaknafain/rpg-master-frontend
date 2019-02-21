@@ -1,23 +1,25 @@
-<ng-container *ngIf="!showForm">
-  <div>You are alreay logged in.</div>
-</ng-container>
-<form *ngIf="showForm" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-  <mat-form-field>
-    <input matInput required type="email" placeholder="Email" formControlName="email">
-    <mat-error *ngIf="false">
-      Please enter a valid email address
-    </mat-error>
-    <mat-error *ngIf="signInForm.controls.email.invalid && signInForm.controls.email.errors.required === true">
-      Email is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
+<div id="sign-in-container">
+  <ng-container *ngIf="!showForm">
+    <div>You are alreay logged in.</div>
+  </ng-container>
+  <form *ngIf="showForm" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput required type="email" placeholder="Email" formControlName="email">
+      <mat-error *ngIf="false">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="signInForm.controls.email.invalid && signInForm.controls.email.errors.required === true">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
 
-  <mat-form-field>
-    <input matInput required type="password" placeholder="Password" formControlName="password">
-    <mat-error *ngIf="signInForm.controls.password.invalid && signInForm.controls.password.errors.required === true">
-      Password is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
+    <mat-form-field>
+      <input matInput required type="password" placeholder="Password" formControlName="password">
+      <mat-error *ngIf="signInForm.controls.password.invalid && signInForm.controls.password.errors.required === true">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
 
-  <loading-button [loading]="isLoading" [disabled]="signInForm.pristine || signInForm.invalid" text="Sign in"></loading-button>
-</form>
+    <loading-button [loading]="isLoading" [disabled]="signInForm.pristine || signInForm.invalid" text="Sign in"></loading-button>
+  </form>
+</div>
