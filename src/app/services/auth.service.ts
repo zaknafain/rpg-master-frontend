@@ -28,8 +28,8 @@ export class AuthService extends BaseService implements OnInit {
 
         return token.jwt;
       }),
-      catchError(this.handleResponseError('AuthService', 'user_token', undefined))
-    );
+      catchError(this.handleError('AuthService user_token'))
+    ) as Observable<string>;
   }
 
   isLoggedIn(): boolean {

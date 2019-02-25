@@ -20,8 +20,8 @@ export class UserService extends BaseService {
 
         return user;
       }),
-      catchError(this.handleResponseError('UserService', 'users/me', undefined))
-    );
+      catchError(this.handleError('UserService users/me'))
+    ) as Observable<User>;
   }
 
   updateUser(user: User): Observable<User> {
@@ -31,7 +31,7 @@ export class UserService extends BaseService {
 
         return user;
       }),
-      catchError(this.handleResponseError('UserService', 'users/:id', undefined))
-    );
+      catchError(this.handleError('UserService users/:id'))
+    ) as Observable<User>;
   }
 }

@@ -1,7 +1,4 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-
-import { TestBed } from '@angular/core/testing';
-import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 
 import { asyncData, asyncError } from '../../testing/async-observable-helpers';
 
@@ -10,13 +7,11 @@ import { UserService } from './user.service';
 
 describe ('UserService (with spies)', () => {
   let httpClientSpy: { get: jasmine.Spy };
-  let errorServiceSpy: { get: jasmine.Spy };
   let userService: UserService;
 
   beforeEach(() => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-    errorServiceSpy = jasmine.createSpyObj('ErrorHandlingService', ['get']);
-    userService = new UserService(<any> httpClientSpy, <any> errorServiceSpy);
+    userService = new UserService(<any> httpClientSpy);
   });
 
   it('should return expected user (HttpClient called once)', () => {
