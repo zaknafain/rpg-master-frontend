@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/rpg-master-frontend
     docker:
-      - image: circleci/node:10-browsers
+      - image: circleci/node:10.7-browsers
     steps:
       - checkout
       - restore_cache:
