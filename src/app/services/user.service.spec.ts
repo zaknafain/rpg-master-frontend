@@ -1,4 +1,8 @@
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+
+import { TestBed } from '@angular/core/testing';
+import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+
 import { asyncData, asyncError } from '../../testing/async-observable-helpers';
 
 import { User } from '../models/user';
@@ -15,30 +19,21 @@ describe ('UserService (with spies)', () => {
     userService = new UserService(<any> httpClientSpy, <any> errorServiceSpy);
   });
 
-  it('should return expected heroes (HttpClient called once)', () => {
-    const expectedHeroes: User[] =
-      [{
-        id: 1,
-        name: 'A',
-        email: 'a@mail.de',
-        admin: false,
-        locale: 'de',
-        createdAt: '2019-1-1',
-        updatedAt: '2019-1-1',
-      }, {
-        id: 2,
-        name: 'B',
-        email: 'b@mail.de',
-        admin: false,
-        locale: 'de',
-        createdAt: '2019-1-1',
-        updatedAt: '2019-1-1',
-      }];
+  it('should return expected user (HttpClient called once)', () => {
+    const currentUser: User = {
+      id: 1,
+      name: 'A',
+      email: 'a@mail.de',
+      admin: false,
+      locale: 'de',
+      createdAt: '2019-1-1',
+      updatedAt: '2019-1-1',
+    };
 
-    httpClientSpy.get.and.returnValue(asyncData(expectedHeroes));
+    httpClientSpy.get.and.returnValue(asyncData(currentUser));
 
     userService.loadCurrentUser().subscribe(
-      heroes => expect(heroes).toEqual(expectedHeroes, 'expected heroes'),
+      user => expect(user).toEqual(currentUser, 'expected user'),
       fail
     );
     expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
@@ -53,7 +48,7 @@ describe ('UserService (with spies)', () => {
     httpClientSpy.get.and.returnValue(asyncError(errorResponse));
 
     userService.loadCurrentUser().subscribe(
-      heroes => fail('expected an error, not heroes'),
+      user => fail('expected an error, not user'),
       error  => expect(error.message).toContain('test 404 error')
     );
   });
