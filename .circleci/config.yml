@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/rpg-master-frontend
     docker:
-      - image: circleci/node:10.7-browsers
+      - image: circleci/node:10.15-browsers
     steps:
       - checkout
       - restore_cache:
@@ -13,4 +13,4 @@ jobs:
           key: rpg-master-frontend-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-      - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - run: npm run test:docker
