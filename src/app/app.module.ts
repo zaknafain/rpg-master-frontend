@@ -12,7 +12,6 @@ import { SharedModule } from './shared.module';
 import { httpInterceptorProviders } from './http-interceptors/index';
 
 import { AuthService } from './services/auth.service';
-import { ErrorHandlingService } from './services/error-handling.service';
 import { MessageService } from './services/message.service';
 import { UserService } from './services/user.service';
 
@@ -39,7 +38,6 @@ import { SignInComponent } from './sign-in/sign-in.component';
     MediaMatcher,
     httpInterceptorProviders,
     AuthService,
-    ErrorHandlingService,
     MessageService,
     UserService
   ],
