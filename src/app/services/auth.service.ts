@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs/Rx';
-import { catchError, map } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 import { BaseService } from './base.service';
 
