@@ -1,4 +1,4 @@
-name: RPG Master Frontend Tests
+name: Tests
 
 on: [push]
 
