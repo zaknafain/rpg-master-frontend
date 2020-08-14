@@ -1,27 +1,17 @@
-# RpgMasterFrontend
+# RPGMaster Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+RPGMaster Frontend contains an Angular app for RPGMaster.
 
-## Development server
+I'm currently relaunching the app.
+[API](https://github.com/zaknafain/rpg-master-api) part is done with ruby on rails already.
+The server part is done with [Stack](https://github.com/zaknafain/rpg-master-stack) using Docker.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Relaunch ToDo list:
 
-## Code scaffolding
+**ToDo:**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- [ ] Update Angular and Material to the latest version.
+- [ ] Use the API for user sign in, sign up, profile etc.
+- [ ] Add campaigns with lists, creation, deletion etc.
+- [ ] Add hierarchy elements with lists, creation, deletion etc.
+- [ ] Add content texts with lists, creation, deletion etc.
