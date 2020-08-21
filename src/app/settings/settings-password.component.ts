@@ -19,7 +19,7 @@ export class PasswordValidation {
 }
 
 @Component({
-  selector: 'app-settings-password',
+  selector: 'rpgm-settings-password',
   templateUrl: './settings-password.component.html',
   styles: [
     `

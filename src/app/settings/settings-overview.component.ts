@@ -5,7 +5,7 @@ import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 
 @Component({
-  selector: 'app-settings-overview',
+  selector: 'rpgm-settings-overview',
   templateUrl: './settings-overview.component.html'
 })
 export class SettingsOverviewComponent {

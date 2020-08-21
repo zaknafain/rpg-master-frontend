@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-loading-button',
+  selector: 'rpgm-loading-button',
   template: `
     <button type="{{ type }}" mat-raised-button [disabled]="loading || disabled" color="{{ color }}">
       <span *ngIf="!loading">{{ text }}</span>

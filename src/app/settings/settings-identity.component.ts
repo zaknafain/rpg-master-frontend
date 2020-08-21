@@ -7,7 +7,7 @@ import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 
 @Component({
-  selector: 'app-settings-identity',
+  selector: 'rpgm-settings-identity',
   templateUrl: './settings-identity.component.html',
   styles: [`
     :host { display: block; }

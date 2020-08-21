@@ -7,7 +7,7 @@ import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'rpgm-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
