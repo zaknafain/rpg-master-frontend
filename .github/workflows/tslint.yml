@@ -23,7 +23,7 @@ jobs:
           ${{ runner.os }}-nodeModules-
     - name: npm install
       run: |
-        npm install --no-optional
+        npm list || npm install --no-optional
         npm install -g @angular/cli
     - name: ng lint
       run: ng lint
