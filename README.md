@@ -2,6 +2,7 @@
 
 ![Depfu](https://badges.depfu.com/badges/566158abd22388e1b9476df7036651dc/overview.svg)
 ![Tests](https://github.com/zaknafain/rpg-master-frontend/workflows/Tests/badge.svg?branch=master)
+![TSLint](https://github.com/zaknafain/rpg-master-frontend/workflows/TSLint/badge.svg?branch=master)
 
 RPGMaster Frontend contains an Angular app for RPGMaster.
 
@@ -11,9 +12,12 @@ The server part is done with [Stack](https://github.com/zaknafain/rpg-master-sta
 
 Relaunch ToDo list:
 
+**Done:**
+
+- [x] Updated Angular and Material to the latest version.
+
 **ToDo:**
 
-- [ ] Update Angular and Material to the latest version.
 - [ ] Use the API for user sign in, sign up, profile etc.
 - [ ] Add campaigns with lists, creation, deletion etc.
 - [ ] Add hierarchy elements with lists, creation, deletion etc.
