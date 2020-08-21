@@ -46,6 +46,6 @@ import { SignInComponent } from './sign-in/sign-in.component';
 export class AppModule {
   // Diagnostic only: inspect router configuration
   constructor(router: Router) {
-    console.log('Routes: ', router.config);
+    console.info('Routes: ', router.config);
   }
 }

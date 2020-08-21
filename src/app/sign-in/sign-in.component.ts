@@ -2,17 +2,17 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { AuthService } from '../services/auth.service'
+import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'sign-in',
+  selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
   @Output() signedIn = new EventEmitter<string>();
   signInForm: FormGroup;
-  isLoading: boolean = false;
+  isLoading = false;
   showForm: boolean;
 
   constructor(

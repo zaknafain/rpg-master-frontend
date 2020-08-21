@@ -1,7 +1,7 @@
 <header>
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <span routerLink="/" class="toolbar-brand" [ngClass]="{'mobile-signed-id' : mobileQuery.matches && currentUser}">RPGMaster</span>
+      <span routerLink="/" class="toolbar-brand" [ngClass]="{ 'mobile-signed-id' : isMobile && currentUser }">RPGMaster</span>
 
       <button mat-icon-button *ngIf="!currentUser" routerLink="/sign_in"><mat-icon>exit_to_app</mat-icon></button>
       <ng-container *ngIf="currentUser">

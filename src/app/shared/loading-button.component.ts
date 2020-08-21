@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'loading-button',
+  selector: 'app-loading-button',
   template: `
-    <button type="{{ buttonType }}" mat-raised-button [disabled]="isLoading || isDisabled" color="{{ buttonColor }}">
-      <span *ngIf="!isLoading">{{ alternateText }}</span>
-      <mat-progress-spinner diameter="21" *ngIf="isLoading" color="{{ buttonColor }}" mode="indeterminate"></mat-progress-spinner>
+    <button type="{{ type }}" mat-raised-button [disabled]="loading || disabled" color="{{ color }}">
+      <span *ngIf="!loading">{{ text }}</span>
+      <mat-progress-spinner diameter="21" *ngIf="loading" color="{{ color }}" mode="indeterminate"></mat-progress-spinner>
     </button>
   `,
   styles: [
@@ -16,11 +16,11 @@ import { Component, Input } from '@angular/core';
   ]
 })
 export class LoadingButtonComponent {
-  @Input('type') buttonType: string = 'submit';
-  @Input('color') buttonColor: string = 'primary';
-  @Input('disabled') isDisabled: boolean = false;
-  @Input('loading') isLoading: boolean = false;
-  @Input('text') alternateText: string = 'Submit';
+  @Input() type = 'submit';
+  @Input() color = 'primary';
+  @Input() disabled = false;
+  @Input() loading = false;
+  @Input() text = 'Submit';
 
   constructor() { }
 

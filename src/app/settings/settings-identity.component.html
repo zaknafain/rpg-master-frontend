@@ -17,6 +17,6 @@
 
   <div class="button-row">
     <button mat-button type="button" routerLink="../">Cancel</button>
-    <loading-button [loading]="isLoading" [disabled]="userForm.pristine || userForm.invalid" text="Save"></loading-button>
+    <app-loading-button [loading]="isLoading" [disabled]="userForm.pristine || userForm.invalid" text="Save"></app-loading-button>
   </div>
 </form>

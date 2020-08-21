@@ -7,7 +7,7 @@ import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 
 @Component({
-  selector: 'settings-identity',
+  selector: 'app-settings-identity',
   templateUrl: './settings-identity.component.html',
   styles: [`
     :host { display: block; }
@@ -18,7 +18,7 @@ import { User } from '../models/user';
 export class SettingsIdentityComponent implements OnInit {
   currentUser: User;
   userForm: FormGroup;
-  isLoading: boolean = false;
+  isLoading = false;
 
   constructor(
     private router: Router,
@@ -42,11 +42,11 @@ export class SettingsIdentityComponent implements OnInit {
 
   onSubmit() {
     this.isLoading = true;
-    let user = JSON.parse(JSON.stringify(this.currentUser));
+    const user = JSON.parse(JSON.stringify(this.currentUser));
     user.email = this.userForm.controls.email.value;
     user.name = this.userForm.controls.name.value;
-    this.userService.updateUser(user).subscribe(user => {
-      this.currentUser = user;
+    this.userService.updateUser(user).subscribe(updatedUser => {
+      this.currentUser = updatedUser;
       this.isLoading = false;
       this.router.navigate(['../'], { relativeTo: this.route });
     });

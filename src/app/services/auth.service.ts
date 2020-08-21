@@ -13,12 +13,12 @@ class JwtToken {
 })
 export class AuthService extends BaseService implements OnInit {
   private _changed = new Subject();
-  jwtToken: string = localStorage.getItem("jwt");
-  redirectUrl: string = '';
+  jwtToken: string = localStorage.getItem('jwt');
+  redirectUrl = '';
   changed = this._changed.asObservable();
 
   ngOnInit() {
-    this.updateToken(localStorage.getItem("jwt"));
+    this.updateToken(localStorage.getItem('jwt'));
   }
 
   signIn(email: string, password: string): Observable<string> {
@@ -43,7 +43,7 @@ export class AuthService extends BaseService implements OnInit {
   private updateToken(token: string) {
     this.jwtToken = token;
     if (!!token) {
-      localStorage.setItem("jwt", token);
+      localStorage.setItem('jwt', token);
     } else {
       this.redirectUrl = '';
       localStorage.clear();

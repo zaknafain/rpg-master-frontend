@@ -8,18 +8,18 @@ import { User } from '../models/user';
 
 export class PasswordValidation {
   static matchPassword(formGroup: FormGroup) {
-    let password = formGroup.get('password').value;
-    let passwordConfirmation = formGroup.get('passwordConfirmation').value;
-    if(password != passwordConfirmation) {
-      return formGroup.get('passwordConfirmation').setErrors( { matchPassword: true } )
+    const password = formGroup.get('password').value;
+    const passwordConfirmation = formGroup.get('passwordConfirmation').value;
+    if (password !== passwordConfirmation) {
+      return formGroup.get('passwordConfirmation').setErrors( { matchPassword: true } );
     } else {
-      return null
+      return null;
     }
   }
 }
 
 @Component({
-  selector: 'settings-password',
+  selector: 'app-settings-password',
   templateUrl: './settings-password.component.html',
   styles: [
     `
@@ -32,7 +32,7 @@ export class PasswordValidation {
 export class SettingsPasswordComponent implements OnInit {
   currentUser: User;
   userForm: FormGroup;
-  isLoading: boolean = false;
+  isLoading = false;
 
   constructor(
     private router: Router,
@@ -63,11 +63,11 @@ export class SettingsPasswordComponent implements OnInit {
 
   onSubmit() {
     this.isLoading = true;
-    let user = JSON.parse(JSON.stringify(this.currentUser));
+    const user = JSON.parse(JSON.stringify(this.currentUser));
     user.password = this.userForm.controls.password.value;
     user.passwordConfirmation = this.userForm.controls.passwordConfirmation.value;
-    this.userService.updateUser(user).subscribe(user => {
-      this.currentUser = user;
+    this.userService.updateUser(user).subscribe(updatedUser => {
+      this.currentUser = updatedUser;
       this.isLoading = false;
       this.router.navigate(['../'], { relativeTo: this.route });
     });
