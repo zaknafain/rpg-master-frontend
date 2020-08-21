@@ -13,6 +13,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 10.16
+    - name: Node module cache
+      uses: actions/cache@v2
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-nodeModules-${{ hashFiles('**/.nvmrc') }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-nodeModules-${{ hashFiles('**/.nvmrc') }}-
+          ${{ runner.os }}-nodeModules-
     - name: npm install
       run: |
         npm install --no-optional
