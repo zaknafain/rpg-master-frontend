@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
-npm install
+npm list || npm install
 
-exec "$@"
+if [ "$1" = '' ]; then
+  ng serve --disableHostCheck --host 0.0.0.0
+else
+  exec "$@"
+fi
