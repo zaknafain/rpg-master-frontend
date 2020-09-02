@@ -3,7 +3,7 @@ name: TSLint
 on: [push]
 
 jobs:
-  build-and-lint:
+  lint:
 
     runs-on: ubuntu-latest
 
