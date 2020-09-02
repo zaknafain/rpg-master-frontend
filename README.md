@@ -1,6 +1,6 @@
 # RPGMaster Frontend
 
-![Depfu](https://badges.depfu.com/badges/566158abd22388e1b9476df7036651dc/overview.svg)
+[![Depfu](https://badges.depfu.com/badges/5b1b6b9b063d66695c799d4608c3e208/overview.svg)](https://depfu.com/github/zaknafain/rpg-master-frontend?project_id=5461)
 ![Tests](https://github.com/zaknafain/rpg-master-frontend/workflows/Tests/badge.svg?branch=master)
 ![TSLint](https://github.com/zaknafain/rpg-master-frontend/workflows/TSLint/badge.svg?branch=master)
 
