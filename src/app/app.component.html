@@ -269,6 +269,11 @@
 <!-- Toolbar -->
 <mat-toolbar color="primary" class="mat-elevation-z8">
   <span>{{ title }}</span>
+  <span class="spacer"></span>
+  <button mat-icon-button (click)="setTheme(!lightMode)">
+    <mat-icon *ngIf="!lightMode">dark_mode</mat-icon>
+    <mat-icon *ngIf="lightMode">light_mode</mat-icon>
+  </button>
 </mat-toolbar>
 
 <div class="content" role="main">
@@ -428,3 +433,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <router-outlet></router-outlet>
+
+<rpgm-footer></rpgm-footer>

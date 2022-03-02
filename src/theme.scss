@@ -1,17 +1,32 @@
 @use '@angular/material' as mat;
 
-$my-primary: mat.define-palette(mat.$teal-palette, 800);
-$my-accent: mat.define-palette(mat.$amber-palette, 800);
+@include mat.core();
 
-// The "warn" palette is optional and defaults to red if not specified.
-$my-warn: mat.define-palette(mat.$red-palette);
+$rpgm-light-primary: mat.define-palette(mat.$teal-palette, 800);
+$rpgm-light-accent: mat.define-palette(mat.$amber-palette, 800);
+$rpgm-dark-primary: mat.define-palette(mat.$teal-palette, 400);
+$rpgm-dark-accent: mat.define-palette(mat.$amber-palette, 300);
+$rpgm-warn: mat.define-palette(mat.$red-palette);
 
-$my-theme: mat.define-light-theme((
+$rpgm-light-theme: mat.define-light-theme((
  color: (
-   primary: $my-primary,
-   accent: $my-accent,
-   warn: $my-warn,
+   primary: $rpgm-light-primary,
+   accent: $rpgm-light-accent,
+   warn: $rpgm-warn,
  )
 ));
 
-@include mat.all-component-themes($my-theme);
+$rpgm-dark-theme: mat.define-dark-theme((
+ color: (
+  primary: $rpgm-dark-primary,
+  accent: $rpgm-dark-accent,
+  warn: $rpgm-warn,
+)
+));
+
+
+@include mat.all-component-themes($rpgm-dark-theme);
+
+.rpgm-light-theme {
+  @include mat.all-component-themes($rpgm-light-theme);
+}
