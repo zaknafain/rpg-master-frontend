@@ -1,6 +1,17 @@
 <h2>Campaigns:</h2>
 
-<div *ngFor="let campaign of campaigns">
-  <p><strong>{{ campaign.name }}</strong></p>
-  <p>{{ campaign.shortDescription }}</p>
-</div>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let campaign of campaigns">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ campaign.name }}
+      </mat-panel-title>
+      <mat-panel-description>
+        <span class="spacer"></span>
+        <mat-icon *ngIf="campaign.isPublic">public</mat-icon>
+        <mat-icon *ngIf="!campaign.isPublic">public_off</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{ campaign.description }}</p>
+  </mat-expansion-panel>
+</mat-accordion>

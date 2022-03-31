@@ -4,9 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,9 +26,10 @@ import { CampaignListComponent } from './campaigns/campaign-list/campaign-list.c
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatExpansionModule,
     MatIconModule,
-    MatToolbarModule,
     MatSidenavModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
