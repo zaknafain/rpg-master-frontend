@@ -14,12 +14,12 @@
 
 <mat-drawer-container autosize>
   <mat-drawer #drawer disableClose="true" opened="true" mode="side">
-    <p>Auto-resizing sidenav</p>
+    <button mat-flat-button routerLink="/campaigns">Campaigns</button>
   </mat-drawer>
 
-  <rpgm-campaign-list></rpgm-campaign-list>
-
-  <router-outlet></router-outlet>
+  <div class="router-container">
+    <router-outlet></router-outlet>
+  </div>
 
 </mat-drawer-container>
 
