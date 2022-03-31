@@ -11,11 +11,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
+import { CampaignListComponent } from './campaigns/campaign-list/campaign-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
+    CampaignListComponent
   ],
   imports: [
     BrowserModule,
