@@ -2,6 +2,10 @@ ARG NODE_VERSION=16.14.2
 
 FROM node:${NODE_VERSION}-alpine3.15 as development
 
+RUN apk add --no-cache chromium=99.0.4844.84-r0
+
+ENV CHROME_BIN=/usr/bin/chromium-browser
+
 WORKDIR /rpg-master-frontend
 
 COPY package.json yarn.lock ./
