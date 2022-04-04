@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
+import { MaterialModule } from '../../material/material.module';
+import { CampaignsService } from '../campaigns.service';
 
 import { CampaignListComponent } from './campaign-list.component';
 
@@ -8,7 +11,15 @@ describe('ListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CampaignListComponent ]
+      imports: [
+        MaterialModule,
+      ],
+      declarations: [
+        CampaignListComponent,
+      ],
+      providers: [
+        { provide: CampaignsService, useValue: { getCampaigns: () => { return of([]) }} },
+      ]
     })
     .compileComponents();
   });
