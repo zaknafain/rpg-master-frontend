@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CampaignsService } from '../../campaigns.service';
+import { CampaignsService } from '../campaigns.service';
 import { ICampaign } from '../campaign.entity';
 
 @Component({
