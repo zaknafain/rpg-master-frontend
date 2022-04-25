@@ -233,10 +233,10 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/compiler-cli@~13.3.3":
-  version "13.3.3"
-  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-13.3.3.tgz#51f3bed26fc17385ff86479965f49296db88af92"
-  integrity sha512-mX2fusiRMUWvXEtfFz/G/tnWiM9a+QpLVSPITpobnKUXMD6pgSh4PGsfHplx4Qbmxz6AqwPZ0wUMSDTopcbW+w==
+"@angular/compiler-cli@~13.3.4":
+  version "13.3.4"
+  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-13.3.4.tgz#d01efe26b401253ed15dc3a037536712e8a8c310"
+  integrity sha512-wCnt2YOS5EiwWCEv8oCqIfiwUtifs+COhcYH6fpmf/3X9w1yKO1ZMA+OsFQ0IVS4d0YYavm5DTPQ2ep2c0sF5w==
   dependencies:
     "@babel/core" "^7.17.2"
     chokidar "^3.0.0"
@@ -1263,10 +1263,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.6.tgz#d5e0706cf8c6acd8c6032f8d54070af261bbbb2f"
   integrity sha512-ws57AidsDvREKrZKYffXddNkyaF14iHNHm8VQnZH6t99E8gczjNN0GpvcGny0imC80yQ0tHz1xVUKk/KFQSUyA==
 
-"@eslint/eslintrc@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.2.1.tgz#8b5e1c49f4077235516bc9ec7d41378c0f69b8c6"
-  integrity sha512-bxvbYnBPN1Gibwyp6NrpnFzA3YtRL3BBAyEAFVIpNTm2Rn4Vy87GA5M4aSn3InRrlsbX5N0GW7XIx+U4SAEKdQ==
+"@eslint/eslintrc@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.2.2.tgz#4989b9e8c0216747ee7cca314ae73791bb281aae"
+  integrity sha512-lTVWHs7O2hjBFZunXTZYnYqtB9GakA1lnxIf+gKq2nY5gxkkNi/lQvveW6t8gFdOHTg6nG50Xs95PrLqVpcaLg==
   dependencies:
     ajv "^6.12.4"
     debug "^4.3.2"
@@ -1612,10 +1612,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.21.tgz#864b987c0c68d07b4345845c3e63b75edd143644"
   integrity sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==
 
-"@types/node@^12.20.48":
-  version "12.20.48"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.48.tgz#55f70bd432b6515828c0298689776861b90ca4fa"
-  integrity sha512-4kxzqkrpwYtn6okJUcb2lfUu9ilnb3yhUOH6qX3nug8D2DupZ2drIkff2yJzYcNJVl3begnlcaBJ7tqiTTzjnQ==
+"@types/node@^12.20.49":
+  version "12.20.49"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.49.tgz#97897a33dd145490f514bbcbccefc178534e360f"
+  integrity sha512-5e6QNb9bkeh4Hni4ktLqUZuUqnGTX/kou2aZkXyxtuYaHXgBm+In1SHR9V+7kDzWzjB08KC2uqt2doDi7cuAAA==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -3243,12 +3243,12 @@ eslint-visitor-keys@^3.0.0, eslint-visitor-keys@^3.3.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz#f6480fa6b1f30efe2d1968aa8ac745b862469826"
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
 
-eslint@^8.13.0:
-  version "8.13.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.13.0.tgz#6fcea43b6811e655410f5626cfcf328016badcd7"
-  integrity sha512-D+Xei61eInqauAyTJ6C0q6x9mx7kTUC1KZ0m0LSEexR0V+e94K12LmWX076ZIsldwfQ2RONdaJe0re0TRGQbRQ==
+eslint@^8.14.0:
+  version "8.14.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.14.0.tgz#62741f159d9eb4a79695b28ec4989fcdec623239"
+  integrity sha512-3/CE4aJX7LNEiE3i6FeodHmI/38GZtWCsAtsymScmzYapx8q1nVVb+eLcLSzATmCPXw5pT4TqVs1E0OmxAd9tw==
   dependencies:
-    "@eslint/eslintrc" "^1.2.1"
+    "@eslint/eslintrc" "^1.2.2"
     "@humanwhocodes/config-array" "^0.9.2"
     ajv "^6.10.0"
     chalk "^4.0.0"
@@ -4372,10 +4372,10 @@ karma-source-map-support@1.4.0:
   dependencies:
     source-map-support "^0.5.5"
 
-karma@^6.3.18:
-  version "6.3.18"
-  resolved "https://registry.yarnpkg.com/karma/-/karma-6.3.18.tgz#85402f7cf5937eeb20eb21944c1d30055570033e"
-  integrity sha512-YEwXVHRILKWKN7uEW9IkgTPjnYGb3YA3MDvlp04xpSRAyrNPoRmsBayLDgHykKAwBm6/mAOckj4xi/1JdQfhzQ==
+karma@^6.3.19:
+  version "6.3.19"
+  resolved "https://registry.yarnpkg.com/karma/-/karma-6.3.19.tgz#e50759667b0b9c6ad758655db0547d3ab4d2abf5"
+  integrity sha512-NDhWckzES/Y9xMiddyU1RzaKL76/scCsu8Mp0vR0Z3lQRvC3p72+Ab4ppoxs36S9tyPNX5V48yvaV++RNEBPZw==
   dependencies:
     "@colors/colors" "1.5.0"
     body-parser "^1.19.0"
