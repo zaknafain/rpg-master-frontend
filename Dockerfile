@@ -1,4 +1,4 @@
-ARG NODE_VERSION=16.14.2
+ARG NODE_VERSION=16.18.1
 
 FROM node:${NODE_VERSION}-alpine3.15 as development
 
