@@ -6,7 +6,7 @@ RUN apk update && \
     apk add --no-cache --update \
       build-base~=0.5 \
       linux-headers~=5.16.7 \
-      tzdata~=2022 \
+      tzdata~=2023 \
       git~=2.36 \
       chromium~=102.0.5005.182
 
