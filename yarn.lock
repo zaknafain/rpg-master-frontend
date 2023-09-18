@@ -1642,10 +1642,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/jasmine@~3.10.12":
-  version "3.10.12"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.10.12.tgz#8a25ccd82b0ab5c787600b9b5c90bdd11ee7c452"
-  integrity sha512-t8aMY7ByoMCJycjhFTUL57QicS9/h+E67QfJsN67d2Haoqb/hhgYBEG+l3jGHeFu0vQ7/+p3t6hZ/3YPSnOTzw==
+"@types/jasmine@~3.10.13":
+  version "3.10.13"
+  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.10.13.tgz#077a105cf5e83c51361416cd245376cc7e281c63"
+  integrity sha512-8ypetVCe/00KH6hNQ17tXQp6nKhfckf/wZoGGh9rFZc4HVwqDCg+Z+fpklvl5sGWgGJ9puUTqWlD/Uk9NM09Rw==
 
 "@types/json-schema@*", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.8", "@types/json-schema@^7.0.9":
   version "7.0.9"
