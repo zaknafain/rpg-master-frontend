@@ -37,7 +37,8 @@ FROM build AS development
 
 EXPOSE 4200
 
-RUN yarn install && \
+RUN npm install -g @angular/cli \
+    yarn install && \
     yarn cache clean
 
 COPY . .
