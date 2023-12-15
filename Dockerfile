@@ -1,14 +1,14 @@
-ARG NODE_VERSION=16.19.1
+ARG NODE_VERSION=21.4.0
 
-FROM node:${NODE_VERSION}-alpine3.16 as build
+FROM node:${NODE_VERSION}-alpine3.19 as build
 
 RUN apk update && \
     apk add --no-cache --update \
       build-base~=0.5 \
-      linux-headers~=5.16.7 \
+      linux-headers~=6.5 \
       tzdata~=2023 \
-      git~=2.36 \
-      chromium~=102.0.5005.182
+      git~=2.43 \
+      chromium~=120.0
 
 ENV CHROME_BIN=/usr/bin/chromium-browser
 
