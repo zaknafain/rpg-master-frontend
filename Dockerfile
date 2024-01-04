@@ -37,7 +37,7 @@ FROM build AS development
 
 EXPOSE 4200
 
-RUN yarn global add @angular/cli@14 \
+RUN yarn global add @angular/cli@15 \
     yarn install && \
     yarn cache clean
 
