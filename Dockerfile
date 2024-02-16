@@ -1,4 +1,4 @@
-ARG NODE_VERSION=21.4.0
+ARG NODE_VERSION=21.6.2
 
 FROM node:${NODE_VERSION}-alpine3.19 as build
 
