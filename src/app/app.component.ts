@@ -7,6 +7,7 @@ import { Component, Renderer2 } from '@angular/core';
 })
 export class AppComponent {
   lightMode = false;
+  signedIn = false;
   title = 'RPGMaster';
 
   constructor(private renderer: Renderer2) {
@@ -20,6 +21,10 @@ export class AppComponent {
     } else {
       this.renderer.removeClass(document.body, 'rpgm-light-theme');
     }
+  }
+
+  signIn(signIn: boolean) {
+    this.signedIn = signIn;
   }
 
 }
