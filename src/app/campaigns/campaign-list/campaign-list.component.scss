@@ -1,0 +1,11 @@
+mat-panel-title {
+  mat-icon {
+    margin-right: 8px;
+  }
+}
+
+.description-container {
+  max-height: 170px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
