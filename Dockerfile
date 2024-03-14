@@ -8,7 +8,7 @@ RUN apk update && \
       linux-headers~=6.5 \
       tzdata~=2024 \
       git~=2.43 \
-      chromium~=121.0
+      chromium~=122
 
 ENV CHROME_BIN=/usr/bin/chromium-browser
 
